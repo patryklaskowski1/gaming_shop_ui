@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 
@@ -18,7 +17,7 @@ class BackDrawerMenu extends StatelessWidget {
               image: AssetImage('images/sale1.jpg'),
               fit: BoxFit.fitWidth,
             ),
-          ),  
+          ),
           ListTile(
             leading: const Icon(
               Icons.computer,
@@ -131,6 +130,21 @@ class BackDrawerMenu extends StatelessWidget {
             ),
             title: const Text(
               'Cameras',
+              style: TextStyle(
+                color: colorFont,
+              ),
+            ),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.chair,
+              color: colorFont,
+            ),
+            title: const Text(
+              'Gaming chair',
               style: TextStyle(
                 color: colorFont,
               ),

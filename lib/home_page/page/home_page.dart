@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/home_page/widgets/back_drawer_menu.dart';
 import 'package:gaming_shop_ui/home_page/widgets/photo_gallery_view.dart';
 import 'package:gaming_shop_ui/home_page/widgets/text_field.dart';
@@ -13,6 +14,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       drawer: const BackDrawerMenu(),
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: colorFont,
+        ),
         title: const Text(
           'GaimingShop UI',
           style: TextStyle(
@@ -45,6 +49,31 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: PhotoGalleryPage(),
           ),
+          const Padding(
+            padding: EdgeInsets.only(
+              left: 20,
+              top: 10,
+              bottom: 10,
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.recommend_outlined,
+                  color: colorFont,
+                  size: 32,
+                ),
+                SizedBox(width: 5),
+                Text(
+                  'RECOMEND',
+                  style: TextStyle(
+                    color: colorFont,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );

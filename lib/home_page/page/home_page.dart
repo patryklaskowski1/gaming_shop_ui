@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/home_page/widgets/back_drawer_menu.dart';
+import 'package:gaming_shop_ui/home_page/widgets/item_view_model.dart';
 import 'package:gaming_shop_ui/home_page/widgets/photo_gallery_view.dart';
 import 'package:gaming_shop_ui/home_page/widgets/text_field.dart';
 
@@ -51,7 +52,7 @@ class HomePage extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(
-              left: 20,
+              left: 10,
               top: 10,
               bottom: 10,
             ),
@@ -73,7 +74,20 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          const Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 5),
+                  child: ItemViewModel(),
+                ),
+                ItemViewModel(),
+                ItemViewModel(),
+              ],
+            ),
+          ),
         ],
       ),
     );

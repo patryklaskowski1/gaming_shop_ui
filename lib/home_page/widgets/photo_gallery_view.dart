@@ -12,7 +12,7 @@ class PhotoGalleryPage extends StatelessWidget {
     'images/sale1.jpg',
     'images/item.jpg',
     'images/item1.jpg',
-    'images/chair.png',
+    'images/chairs.png',
   ];
 
   @override

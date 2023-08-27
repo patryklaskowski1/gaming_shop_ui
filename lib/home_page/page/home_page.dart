@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
+
 import 'package:gaming_shop_ui/home_page/widgets/back_drawer_menu.dart';
-import 'package:gaming_shop_ui/home_page/widgets/item_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/cameras_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/chair_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/headphones_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/keyboards_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/memory_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/microphones_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/monitors_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/mouse_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/others_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/pcs_view_model.dart';
 import 'package:gaming_shop_ui/home_page/widgets/photo_gallery_view.dart';
 import 'package:gaming_shop_ui/home_page/widgets/text_field.dart';
+import 'package:gaming_shop_ui/home_page/widgets/wires_view_model.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -52,9 +63,9 @@ class HomePage extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(
-              left: 10,
-              top: 10,
-              bottom: 10,
+              left: 5,
+              top: 5,
+              bottom: 5,
             ),
             child: Row(
               children: [
@@ -75,17 +86,25 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          const Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 5),
-                  child: ItemViewModel(),
-                ),
-                ItemViewModel(),
-                ItemViewModel(),
-              ],
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CamerasViewModel(),
+                  ChairViewModel(),
+                  HeadphonesViewModel(),
+                  KeyboardsViewModel(),
+                  MemoryViewModel(),
+                  MicrophonesViewModel(),
+                  MonitorsViewModel(),
+                  MouseViewModel(),
+                  OthersViewModel(),
+                  PcsViewModel(),
+                  WiresViewModel(),
+                ],
+              ),
             ),
           ),
         ],

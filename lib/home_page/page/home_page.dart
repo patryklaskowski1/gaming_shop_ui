@@ -6,6 +6,7 @@ import 'package:gaming_shop_ui/home_page/widgets/cameras_view_model.dart';
 import 'package:gaming_shop_ui/home_page/widgets/chair_view_model.dart';
 import 'package:gaming_shop_ui/home_page/widgets/headphones_view_model.dart';
 import 'package:gaming_shop_ui/home_page/widgets/keyboards_view_model.dart';
+import 'package:gaming_shop_ui/home_page/widgets/laptop_view_model.dart';
 import 'package:gaming_shop_ui/home_page/widgets/memory_view_model.dart';
 import 'package:gaming_shop_ui/home_page/widgets/microphones_view_model.dart';
 import 'package:gaming_shop_ui/home_page/widgets/monitors_view_model.dart';
@@ -96,6 +97,7 @@ class HomePage extends StatelessWidget {
                   ChairViewModel(),
                   HeadphonesViewModel(),
                   KeyboardsViewModel(),
+                  LaptopViewModel(),
                   MemoryViewModel(),
                   MicrophonesViewModel(),
                   MonitorsViewModel(),

@@ -24,22 +24,7 @@ class BackDrawerMenu extends StatelessWidget {
               color: colorFont,
             ),
             title: const Text(
-              "PC's",
-              style: TextStyle(
-                color: colorFont,
-              ),
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.laptop,
-              color: colorFont,
-            ),
-            title: const Text(
-              'Laptops',
+              "PC's & Laptops",
               style: TextStyle(
                 color: colorFont,
               ),
@@ -69,22 +54,7 @@ class BackDrawerMenu extends StatelessWidget {
               color: colorFont,
             ),
             title: const Text(
-              'Keyboards',
-              style: TextStyle(
-                color: colorFont,
-              ),
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.mouse,
-              color: colorFont,
-            ),
-            title: const Text(
-              'Mouse',
+              'Keyboards & Mouse',
               style: TextStyle(
                 color: colorFont,
               ),
@@ -99,22 +69,7 @@ class BackDrawerMenu extends StatelessWidget {
               color: colorFont,
             ),
             title: const Text(
-              'Headphones',
-              style: TextStyle(
-                color: colorFont,
-              ),
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.mic,
-              color: colorFont,
-            ),
-            title: const Text(
-              'Microphones',
+              'Headphones & Microphones',
               style: TextStyle(
                 color: colorFont,
               ),

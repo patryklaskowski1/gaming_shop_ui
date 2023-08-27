@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 
-class CamerasViewModel extends StatelessWidget {
-  const CamerasViewModel({
+class WebcamViewModel extends StatelessWidget {
+  const WebcamViewModel({
     super.key,
   });
 

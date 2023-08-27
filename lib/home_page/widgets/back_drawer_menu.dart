@@ -153,6 +153,22 @@ class BackDrawerMenu extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
+          const Padding(
+            padding: EdgeInsets.only(top: 10, left: 20, right: 10),
+            child: SizedBox(
+              height: 80,
+              width: 60,
+              child: Center(
+                child: Text(
+                  'Delivery within 48 hours ! ! !',
+                  style: TextStyle(
+                    fontSize: 36,
+                    color: Colors.yellow,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

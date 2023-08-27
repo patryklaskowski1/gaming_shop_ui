@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 
 import 'package:gaming_shop_ui/home_page/widgets/back_drawer_menu.dart';
-import 'package:gaming_shop_ui/home_page/widgets/cameras_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/chair_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/headphones_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/keyboards_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/laptop_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/memory_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/microphones_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/monitors_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/mouse_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/others_view_model.dart';
-import 'package:gaming_shop_ui/home_page/widgets/pcs_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/chair_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/headphones_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/keyboards_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/laptop_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/memory_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/microphones_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/monitors_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/mouse_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/others_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/pcs_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/webcam_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/wires_view_model.dart';
+
 import 'package:gaming_shop_ui/home_page/widgets/photo_gallery_view.dart';
 import 'package:gaming_shop_ui/home_page/widgets/text_field.dart';
-import 'package:gaming_shop_ui/home_page/widgets/wires_view_model.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -93,7 +94,7 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CamerasViewModel(),
+                  WebcamViewModel(),
                   ChairViewModel(),
                   HeadphonesViewModel(),
                   KeyboardsViewModel(),

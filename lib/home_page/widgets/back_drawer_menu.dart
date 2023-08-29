@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gaming_shop_ui/category_pages/keyboards_mouse_category_page/keyboards_mouses_category_page.dart';
 import 'package:gaming_shop_ui/category_pages/monitors_category_page/monitors_category_page.dart';
 import 'package:gaming_shop_ui/category_pages/pc_laptop_category_page/pcs_laptops_category_page.dart';
 import 'package:gaming_shop_ui/const/const.dart';
@@ -72,7 +73,12 @@ class BackDrawerMenu extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const KeyboardsMouseCategoryPage(),
+                ),
+              );
             },
           ),
           ListTile(

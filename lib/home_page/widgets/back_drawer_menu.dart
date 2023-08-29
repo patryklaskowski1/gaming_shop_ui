@@ -3,6 +3,7 @@ import 'package:gaming_shop_ui/category_pages/headphones_microphones_category_pa
 import 'package:gaming_shop_ui/category_pages/keyboards_mouse_category_page/keyboards_mouses_category_page.dart';
 import 'package:gaming_shop_ui/category_pages/monitors_category_page/monitors_category_page.dart';
 import 'package:gaming_shop_ui/category_pages/pc_laptop_category_page/pcs_laptops_category_page.dart';
+import 'package:gaming_shop_ui/category_pages/webcams_category_page/webcams_category_page.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 
 class BackDrawerMenu extends StatelessWidget {
@@ -93,11 +94,12 @@ class BackDrawerMenu extends StatelessWidget {
                 color: colorFont,
               ),
             ),
-              onTap: () {
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const HeadphonesMicrophonesCategoryPage(),
+                  builder: (context) =>
+                      const HeadphonesMicrophonesCategoryPage(),
                 ),
               );
             },
@@ -108,13 +110,18 @@ class BackDrawerMenu extends StatelessWidget {
               color: colorFont,
             ),
             title: const Text(
-              'Cameras',
+              'Webcam',
               style: TextStyle(
                 color: colorFont,
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const WebcamCategoryPage(),
+                ),
+              );
             },
           ),
           ListTile(
@@ -123,7 +130,7 @@ class BackDrawerMenu extends StatelessWidget {
               color: colorFont,
             ),
             title: const Text(
-              'Gaming chair',
+              'Gaming chairs',
               style: TextStyle(
                 color: colorFont,
               ),

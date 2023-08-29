@@ -5,48 +5,29 @@ import 'package:gaming_shop_ui/home_page/view_contents/hits_of_the_week_view_con
 import 'package:gaming_shop_ui/home_page/view_contents/last_watched_view_content.dart';
 import 'package:gaming_shop_ui/home_page/view_contents/photo_gallery_view.dart';
 import 'package:gaming_shop_ui/home_page/view_contents/recomend_view_content.dart';
+import 'package:gaming_shop_ui/home_page/widgets/app_bar.dart';
 import 'package:gaming_shop_ui/home_page/widgets/back_drawer_menu.dart';
 import 'package:gaming_shop_ui/home_page/widgets/bottom_navigator_bar.dart';
 
 import 'package:gaming_shop_ui/home_page/widgets/text_field.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({
     super.key,
   });
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const BackDrawerMenu(),
-      appBar: AppBar(
-        iconTheme: const IconThemeData(
-          color: colorFont,
-        ),
-        title: const Text(
-          'GaimingShop UI',
-          style: TextStyle(
-            color: colorFont,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_basket_outlined,
-              color: colorFont,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications,
-              color: colorFont,
-            ),
-          ),
-        ],
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: AppBarView(),
       ),
       body: ListView(
         children: [

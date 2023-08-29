@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 
-class BottomNavigatorBar extends StatelessWidget {
+class BottomNavigatorBar extends StatefulWidget {
   const BottomNavigatorBar({
     super.key,
   });
 
   @override
+  State<BottomNavigatorBar> createState() => _BottomNavigatorBarState();
+}
+
+class _BottomNavigatorBarState extends State<BottomNavigatorBar> {
+  int selectedIndex = 0;
+
+  @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      selectedItemColor: Colors.yellow,
+      type: BottomNavigationBarType.shifting,
       selectedIconTheme: const IconThemeData(
         color: Colors.yellow,
       ),
@@ -43,6 +50,12 @@ class BottomNavigatorBar extends StatelessWidget {
           label: "",
         ),
       ],
+      onTap: (index) => setState(
+        () {
+          selectedIndex = index;
+        },
+      ),
+      currentIndex: selectedIndex,
     );
   }
 }

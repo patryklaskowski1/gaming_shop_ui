@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gaming_shop_ui/category_pages/pc_laptop_category_page/pcs_laptops_category_page.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 
 class BackDrawerMenu extends StatelessWidget {
@@ -30,7 +31,12 @@ class BackDrawerMenu extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PcsLaptopsCategoryPage(),
+                ),
+              );
             },
           ),
           ListTile(

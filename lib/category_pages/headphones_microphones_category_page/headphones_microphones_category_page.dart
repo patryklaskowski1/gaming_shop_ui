@@ -3,21 +3,21 @@ import 'package:gaming_shop_ui/guides/guides_view.dart';
 import 'package:gaming_shop_ui/home_page/widgets/app_bar.dart';
 import 'package:gaming_shop_ui/home_page/widgets/back_drawer_menu.dart';
 import 'package:gaming_shop_ui/home_page/widgets/bottom_navigator_bar.dart';
-import 'package:gaming_shop_ui/itemsModel/keyboards_view_model.dart';
-import 'package:gaming_shop_ui/itemsModel/mouse_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/headphones_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/microphones_view_model.dart';
 
-class KeyboardsMouseCategoryPage extends StatefulWidget {
-  const KeyboardsMouseCategoryPage({
+class HeadphonesMicrophonesCategoryPage extends StatefulWidget {
+  const HeadphonesMicrophonesCategoryPage({
     super.key,
   });
 
   @override
-  State<KeyboardsMouseCategoryPage> createState() =>
-      _KeyboardsMouseCategoryPageState();
+  State<HeadphonesMicrophonesCategoryPage> createState() =>
+      _HeadphonesMicrophonesCategoryPageState();
 }
 
-class _KeyboardsMouseCategoryPageState
-    extends State<KeyboardsMouseCategoryPage> {
+class _HeadphonesMicrophonesCategoryPageState
+    extends State<HeadphonesMicrophonesCategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,18 +41,12 @@ class _KeyboardsMouseCategoryPageState
                 crossAxisSpacing: 5,
                 mainAxisSpacing: 10,
                 children: const [
-                  KeyboardsViewModel(),
-                  MouseViewModel(),
-                  KeyboardsViewModel(),
-                  MouseViewModel(),
-                  KeyboardsViewModel(),
-                  MouseViewModel(),
-                  KeyboardsViewModel(),
-                  MouseViewModel(),
-                  KeyboardsViewModel(),
-                  MouseViewModel(),
-                  KeyboardsViewModel(),
-                  MouseViewModel(),
+                  HeadphonesViewModel(),
+                  MicrophonesViewModel(),
+                  HeadphonesViewModel(),
+                  MicrophonesViewModel(),
+                  HeadphonesViewModel(),
+                  MicrophonesViewModel(),
                 ],
               ),
             ),

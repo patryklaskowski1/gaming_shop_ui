@@ -3,18 +3,18 @@ import 'package:gaming_shop_ui/guides/guides_view.dart';
 import 'package:gaming_shop_ui/home_page/widgets/app_bar.dart';
 import 'package:gaming_shop_ui/home_page/widgets/back_drawer_menu.dart';
 import 'package:gaming_shop_ui/home_page/widgets/bottom_navigator_bar.dart';
-import 'package:gaming_shop_ui/itemsModel/webcam_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/others_view_model.dart';
 
-class WebcamCategoryPage extends StatefulWidget {
-  const WebcamCategoryPage({
+class OthersCategoryPage extends StatefulWidget {
+  const OthersCategoryPage({
     super.key,
   });
 
   @override
-  State<WebcamCategoryPage> createState() => _WebcamCategoryPageState();
+  State<OthersCategoryPage> createState() => _OthersCategoryPageState();
 }
 
-class _WebcamCategoryPageState extends State<WebcamCategoryPage> {
+class _OthersCategoryPageState extends State<OthersCategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,11 +38,10 @@ class _WebcamCategoryPageState extends State<WebcamCategoryPage> {
                 crossAxisSpacing: 2,
                 mainAxisSpacing: 10,
                 children: const [
-                  WebcamViewModel(),
-                  WebcamViewModel(),
-                  WebcamViewModel(),
-                  WebcamViewModel(),
-                  WebcamViewModel(),
+                  OthersViewModel(),
+                  OthersViewModel(),
+                  OthersViewModel(),
+                  OthersViewModel(),
                 ],
               ),
             ),

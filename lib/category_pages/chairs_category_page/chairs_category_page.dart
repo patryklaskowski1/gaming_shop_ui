@@ -28,7 +28,7 @@ class _ChairsCategoryPageState extends State<ChairsCategoryPage> {
           const GuidesView(),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(5),
               child: GridView.count(
                 childAspectRatio: MediaQuery.of(context).size.width /
                     (MediaQuery.of(context).size.height),

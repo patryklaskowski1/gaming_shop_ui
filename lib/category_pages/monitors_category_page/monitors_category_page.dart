@@ -3,19 +3,18 @@ import 'package:gaming_shop_ui/guides/guides_view.dart';
 import 'package:gaming_shop_ui/home_page/widgets/app_bar.dart';
 import 'package:gaming_shop_ui/home_page/widgets/back_drawer_menu.dart';
 import 'package:gaming_shop_ui/home_page/widgets/bottom_navigator_bar.dart';
-import 'package:gaming_shop_ui/itemsModel/laptop_view_model.dart';
-import 'package:gaming_shop_ui/itemsModel/pcs_view_model.dart';
+import 'package:gaming_shop_ui/itemsModel/monitors_view_model.dart';
 
-class PcsLaptopsCategoryPage extends StatefulWidget {
-  const PcsLaptopsCategoryPage({
+class MonitorsCategoryPage extends StatefulWidget {
+  const MonitorsCategoryPage({
     super.key,
   });
 
   @override
-  State<PcsLaptopsCategoryPage> createState() => _PcsLaptopsCategoryPageState();
+  State<MonitorsCategoryPage> createState() => _MonitorsCategoryPageState();
 }
 
-class _PcsLaptopsCategoryPageState extends State<PcsLaptopsCategoryPage> {
+class _MonitorsCategoryPageState extends State<MonitorsCategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,21 +35,18 @@ class _PcsLaptopsCategoryPageState extends State<PcsLaptopsCategoryPage> {
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 crossAxisCount: 3,
-                crossAxisSpacing: 5,
+                crossAxisSpacing: 2,
                 mainAxisSpacing: 10,
                 children: const [
-                  LaptopViewModel(),
-                  PcsViewModel(),
-                  LaptopViewModel(),
-                  PcsViewModel(),
-                  LaptopViewModel(),
-                  PcsViewModel(),
-                  LaptopViewModel(),
-                  PcsViewModel(),
-                  LaptopViewModel(),
-                  PcsViewModel(),
-                  LaptopViewModel(),
-                  PcsViewModel(),
+                  MonitorsViewModel(),
+                  MonitorsViewModel(),
+                  MonitorsViewModel(),
+                  MonitorsViewModel(),
+                  MonitorsViewModel(),
+                  MonitorsViewModel(),
+                  MonitorsViewModel(),
+                  MonitorsViewModel(),
+                  MonitorsViewModel(),
                 ],
               ),
             ),

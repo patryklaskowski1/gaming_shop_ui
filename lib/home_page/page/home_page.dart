@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/guides/guides_view.dart';
 import 'package:gaming_shop_ui/home_page/view_contents/hits_of_the_week_view_content.dart';
 import 'package:gaming_shop_ui/home_page/view_contents/last_watched_view_content.dart';
@@ -42,7 +41,7 @@ class _HomePageState extends State<HomePage> {
           const LastWatchedViewContent(),
         ],
       ),
-      bottomNavigationBar: const BottomNavigatorBar(),
+      bottomNavigationBar: const BottomNavigatorBarDesign(),
     );
   }
 }

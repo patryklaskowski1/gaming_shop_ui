@@ -5,6 +5,7 @@ import 'package:gaming_shop_ui/category_pages/keyboards_mouse_category_page/keyb
 import 'package:gaming_shop_ui/category_pages/monitors_category_page/monitors_category_page.dart';
 import 'package:gaming_shop_ui/category_pages/pc_laptop_category_page/pcs_laptops_category_page.dart';
 import 'package:gaming_shop_ui/category_pages/webcams_category_page/webcams_category_page.dart';
+import 'package:gaming_shop_ui/category_pages/wires_category_page/wires_category_page.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 
 class BackDrawerMenu extends StatelessWidget {
@@ -157,7 +158,12 @@ class BackDrawerMenu extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const WiresCategoryPage(),
+                ),
+              );
             },
           ),
           ListTile(

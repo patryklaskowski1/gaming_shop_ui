@@ -9,7 +9,6 @@ import 'package:gaming_shop_ui/category_pages/pc_laptop_category_page/pcs_laptop
 import 'package:gaming_shop_ui/category_pages/webcams_category_page/webcams_category_page.dart';
 import 'package:gaming_shop_ui/category_pages/wires_category_page/wires_category_page.dart';
 import 'package:gaming_shop_ui/const/const.dart';
-import 'package:gaming_shop_ui/itemsModel/others_view_model.dart';
 
 class BackDrawerMenu extends StatelessWidget {
   const BackDrawerMenu({

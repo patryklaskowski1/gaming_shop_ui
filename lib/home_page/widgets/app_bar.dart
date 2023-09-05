@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
+import 'package:gaming_shop_ui/shopping_cart_page/shopping_cart_page.dart';
 
 class AppBarView extends StatefulWidget {
   const AppBarView({
@@ -27,7 +28,18 @@ class _AppBarViewState extends State<AppBarView> {
       centerTitle: true,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            setState(
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ShoppingCartPage(),
+                  ),
+                );
+              },
+            );
+          },
           icon: const Icon(
             Icons.shopping_basket_outlined,
             color: colorFont,

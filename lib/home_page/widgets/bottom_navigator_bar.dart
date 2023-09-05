@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
+import 'package:gaming_shop_ui/home_page/page/home_page.dart';
 
 class BottomNavigatorBarDesign extends StatefulWidget {
   const BottomNavigatorBarDesign({
@@ -7,7 +8,8 @@ class BottomNavigatorBarDesign extends StatefulWidget {
   });
 
   @override
-  State<BottomNavigatorBarDesign> createState() => _BottomNavigatorBarDesignState();
+  State<BottomNavigatorBarDesign> createState() =>
+      _BottomNavigatorBarDesignState();
 }
 
 class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
@@ -17,41 +19,52 @@ class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.shifting,
-      selectedIconTheme: const IconThemeData(
-        color: Colors.yellow,
-      ),
-      items: const [
+      items: [
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.home,
+          icon: IconButton(
+            color: colorFont,
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
+                );
+              });
+            },
+          ),
+          label: "",
+        ),
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {},
             color: colorFont,
           ),
           label: "",
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.search,
+          icon: IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            onPressed: () {},
             color: colorFont,
           ),
           label: "",
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.shopping_cart,
+          icon: IconButton(
+            icon: const Icon(Icons.favorite),
+            onPressed: () {},
             color: colorFont,
           ),
           label: "",
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.favorite,
-            color: colorFont,
-          ),
-          label: "",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.account_circle,
+          icon: IconButton(
+            icon: const Icon(Icons.account_circle),
+            onPressed: () {},
             color: colorFont,
           ),
           label: "",

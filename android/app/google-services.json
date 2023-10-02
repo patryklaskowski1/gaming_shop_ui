@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "602308492916",
+    "project_id": "gaming-shop-ui",
+    "storage_bucket": "gaming-shop-ui.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602308492916:android:7489cae5dae3ff8d6d9b21",
+        "android_client_info": {
+          "package_name": "com.patryklaskowski.gaming_shop_ui"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDztVRznrMhV6Vt-Un7YHOP3EzZoM-zONc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

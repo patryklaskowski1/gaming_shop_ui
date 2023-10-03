@@ -16,6 +16,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   var errorMessage = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'LOGIN',
+                'Sign in to account',
                 style: TextStyle(
                   color: colorFont,
                 ),
@@ -55,24 +56,35 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () async {
-                  try {
-                    await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: widget.emailController.text,
-                      password: widget.passwordController.text,
-                    );
-                  } catch (error) {
-                    setState(
-                      () {
-                        errorMessage = 'Invalid Login : ${error}';
-                      },
-                    );
-                  }
-                },
-                child: const Text(
-                  'Login',
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ElevatedButton(
+                    onPressed: () async {
+                      try {
+                        await FirebaseAuth.instance.signInWithEmailAndPassword(
+                          email: widget.emailController.text,
+                          password: widget.passwordController.text,
+                        );
+                      } catch (error) {
+                        setState(
+                          () {
+                            errorMessage = 'Invalid Login : ${error}';
+                          },
+                        );
+                      }
+                    },
+                    child: const Text(
+                      'Sign in ',
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Sign Up ',
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

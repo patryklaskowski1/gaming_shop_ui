@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/home_page/page/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:gaming_shop_ui/login_page/login_page.dart';
+import 'package:gaming_shop_ui/auth/login_page/login_page.dart';
 import 'firebase_options.dart';
 
 void main() async {

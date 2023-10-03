@@ -7,14 +7,15 @@ class LoginPage extends StatefulWidget {
     super.key,
   });
 
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-
+  var errorMessage = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,17 +33,25 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 20),
               TextField(
-                controller: emailController,
+                controller: widget.emailController,
                 decoration: const InputDecoration(
                   hintText: 'addres E-mail',
                 ),
               ),
               const SizedBox(height: 20),
               TextField(
-                controller: passwordController,
+                controller: widget.passwordController,
                 obscureText: true,
                 decoration: const InputDecoration(
                   hintText: 'password',
+                ),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                errorMessage,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 231, 32, 18),
                 ),
               ),
               const SizedBox(height: 20),
@@ -50,11 +59,15 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () async {
                   try {
                     await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: emailController.text,
-                      password: passwordController.text,
+                      email: widget.emailController.text,
+                      password: widget.passwordController.text,
                     );
                   } catch (error) {
-                    Text('coś poszło nie tak ${error}');
+                    setState(
+                      () {
+                        errorMessage = 'Nieprawidłowe logowanie : ${error}';
+                      },
+                    );
                   }
                 },
                 child: const Text(

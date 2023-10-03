@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'LOGOWANIE',
+                'LOGIN',
                 style: TextStyle(
                   color: colorFont,
                 ),
@@ -65,13 +65,13 @@ class _LoginPageState extends State<LoginPage> {
                   } catch (error) {
                     setState(
                       () {
-                        errorMessage = 'Nieprawidłowe logowanie : ${error}';
+                        errorMessage = 'Invalid Login : ${error}';
                       },
                     );
                   }
                 },
                 child: const Text(
-                  'Zaloguj się',
+                  'Login',
                 ),
               ),
             ],

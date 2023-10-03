@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gaming_shop_ui/home_page/page/home_page.dart';
+import 'package:gaming_shop_ui/login_page/login_page.dart';
 
 class RootPage extends StatelessWidget {
   const RootPage({
@@ -13,13 +15,9 @@ class RootPage extends StatelessWidget {
         builder: (context, snapshot) {
           final user = snapshot.data;
           if (user == null) {
-            return const Scaffold(
-              body: Center(
-                child: Text('Jesteś niezalogowany'),
-              ),
-            );
+            return LoginPage();
           }
-          return const Scaffold();
+          return const HomePage();
         });
   }
 }

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/home_page/page/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:gaming_shop_ui/login_page/login_page.dart';
 import 'firebase_options.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Gaiming Shop UI',
       theme: ThemeData.dark(),
-      home: const HomePage(),
+      home: LoginPage(),
     );
   }
 }

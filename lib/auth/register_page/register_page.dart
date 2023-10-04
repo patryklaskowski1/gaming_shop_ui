@@ -1,21 +1,22 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:gaming_shop_ui/auth/register_page/register_page.dart';
+import 'package:gaming_shop_ui/auth/login_page/login_page.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({
+class RegisterPage extends StatefulWidget {
+  RegisterPage({
     super.key,
   });
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final accountNameController = TextEditingController();
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   var errorMessage = '';
 
   @override
@@ -28,9 +29,16 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Sign in to account',
+                'Create an account',
                 style: TextStyle(
                   color: colorFont,
+                ),
+              ),
+              const SizedBox(height: 20),
+              TextField(
+                controller: widget.accountNameController,
+                decoration: const InputDecoration(
+                  hintText: 'Account Name',
                 ),
               ),
               const SizedBox(height: 20),
@@ -58,40 +66,40 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 20),
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ElevatedButton(
                     onPressed: () async {
                       try {
-                        await FirebaseAuth.instance.signInWithEmailAndPassword(
+                        await FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
                           email: widget.emailController.text,
                           password: widget.passwordController.text,
                         );
                       } catch (error) {
                         setState(
                           () {
-                            errorMessage = 'Invalid Login : ${error}';
+                            errorMessage = 'Invalid registration : $error';
                           },
                         );
                       }
                     },
                     child: const Text(
-                      'Sign in ',
+                      'Sign Up  ',
                     ),
                   ),
-                  const SizedBox(height: 40),
-                  const Text("If you don't have an account ↓"),
+                  const SizedBox(height: 20),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RegisterPage(),
+                          builder: (context) => LoginPage(),
                         ),
                       );
                     },
                     child: const Text(
-                      'Create an account',
+                      'Back to sign in',
                     ),
                   ),
                 ],

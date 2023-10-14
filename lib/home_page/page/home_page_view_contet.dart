@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gaming_shop_ui/auth/root_page/cubit/root_page_cubit.dart';
 import 'package:gaming_shop_ui/guides/guides_view.dart';
 import 'package:gaming_shop_ui/home_page/view_contents/hits_of_the_week_view_content.dart';
 import 'package:gaming_shop_ui/home_page/view_contents/last_watched_view_content.dart';
@@ -13,18 +15,25 @@ class HomePageViewContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        const TextFieldContent(),
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: PhotoGalleryPage(),
-        ),
-        const RecomendViewContent(),
-        const GuidesView(),
-        const HitsOfTheWeekViewContent(),
-        const LastWatchedViewContent(),
-      ],
+    return BlocProvider(
+      create: (context) => RootPageCubit(),
+      child: BlocBuilder<RootPageCubit, RootPageState>(
+        builder: (context, state) {
+          return ListView(
+            children: [
+              const TextFieldContent(),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: PhotoGalleryPage(),
+              ),
+              const RecomendViewContent(),
+              const GuidesView(),
+              const HitsOfTheWeekViewContent(),
+              const LastWatchedViewContent(),
+            ],
+          );
+        },
+      ),
     );
   }
 }

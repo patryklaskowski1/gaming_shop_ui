@@ -36,13 +36,6 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 20),
               TextField(
-                controller: widget.accountNameController,
-                decoration: const InputDecoration(
-                  hintText: 'Account Name',
-                ),
-              ),
-              const SizedBox(height: 20),
-              TextField(
                 controller: widget.emailController,
                 decoration: const InputDecoration(
                   hintText: 'Addres E-mail',

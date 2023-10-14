@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/favorite_page/favorite_page.dart';
 import 'package:gaming_shop_ui/home_page/page/home_page.dart';
+import 'package:gaming_shop_ui/profile/user_profile_page.dart';
 import 'package:gaming_shop_ui/serach_page/serach_page.dart';
 import 'package:gaming_shop_ui/shopping_cart_page/shopping_cart_page.dart';
 
@@ -31,8 +32,7 @@ class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
             onPressed: () {
               setState(
                 () {
-                  Navigator.push(
-                    context,
+                  Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => const HomePage(),
                     ),
@@ -49,8 +49,7 @@ class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
             onPressed: () {
               setState(
                 () {
-                  Navigator.push(
-                    context,
+                  Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => const SearchPage(),
                     ),
@@ -68,8 +67,7 @@ class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
             onPressed: () {
               setState(
                 () {
-                  Navigator.push(
-                    context,
+                  Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => const ShoppingCartPage(),
                     ),
@@ -87,8 +85,7 @@ class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
             onPressed: () {
               setState(
                 () {
-                  Navigator.push(
-                    context,
+                  Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => const FavoritePage(),
                     ),
@@ -103,7 +100,17 @@ class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
         BottomNavigationBarItem(
           icon: IconButton(
             icon: const Icon(Icons.account_circle),
-            onPressed: () {},
+            onPressed: () {
+              setState(
+                () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ProfilePage(),
+                    ),
+                  );
+                },
+              );
+            },
             color: colorFont,
           ),
           label: "",

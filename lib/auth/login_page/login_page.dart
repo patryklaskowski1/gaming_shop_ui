@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                       } catch (error) {
                         setState(
                           () {
-                            errorMessage = 'Invalid Login : ${error}';
+                            errorMessage = 'Invalid Login : $error';
                           },
                         );
                       }
@@ -83,8 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                   const Text("If you don't have an account ↓"),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => RegisterPage(),
                         ),

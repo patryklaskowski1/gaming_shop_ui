@@ -14,7 +14,6 @@ class ProfilePage extends StatelessWidget {
       create: (context) => RootPageCubit()..start(),
       child: BlocBuilder<RootPageCubit, RootPageState>(
         builder: (context, state) {
-          final user = state.user;
           return Scaffold(
               body: Padding(
             padding: const EdgeInsets.only(top: 50),
@@ -39,6 +38,11 @@ class ProfilePage extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             context.read<RootPageCubit>().signOut();
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
                           },
                           child: const Text('Log out'),
                         ),
@@ -60,7 +64,7 @@ class ProfilePage extends StatelessWidget {
                           children: [
                             const Text('Account E-mail :'),
                             const SizedBox(height: 10),
-                            Text('${user?.email}'),
+                            Text('${state.user?.email}'),
                           ],
                         ),
                       ],

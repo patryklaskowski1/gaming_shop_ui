@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gaming_shop_ui/auth/login_page/login_page.dart';
+import 'package:gaming_shop_ui/auth/root_page/cubit/root_page_cubit.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/favorite_page/favorite_page.dart';
 import 'package:gaming_shop_ui/home_page/page/home_page.dart';
@@ -21,107 +24,121 @@ class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: IconButton(
-            color: colorFont,
-            icon: const Icon(
-              Icons.home,
+    return BlocProvider(
+      create: (context) => RootPageCubit()..start(),
+      child: BlocBuilder<RootPageCubit, RootPageState>(
+        builder: (context, state) {
+          return BottomNavigationBar(
+            items: [
+              BottomNavigationBarItem(
+                icon: IconButton(
+                  color: colorFont,
+                  icon: const Icon(
+                    Icons.home,
+                  ),
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+                label: "",
+              ),
+              BottomNavigationBarItem(
+                icon: IconButton(
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SearchPage(),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  color: colorFont,
+                ),
+                label: "",
+              ),
+              BottomNavigationBarItem(
+                icon: IconButton(
+                  icon: const Icon(Icons.shopping_cart),
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const ShoppingCartPage(),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  color: colorFont,
+                ),
+                label: "",
+              ),
+              BottomNavigationBarItem(
+                icon: IconButton(
+                  icon: const Icon(Icons.favorite),
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const FavoritePage(),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  color: colorFont,
+                ),
+                label: "",
+              ),
+              BottomNavigationBarItem(
+                icon: IconButton(
+                  icon: const Icon(Icons.account_circle),
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const ProfilePage(),
+                          ),
+                        );
+                        if (state.user?.email == null) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                            ),
+                          );
+                        }
+                      },
+                    );
+                  },
+                  color: colorFont,
+                ),
+                label: "",
+              ),
+            ],
+            onTap: (index) => setState(
+              () {
+                selectedIndex = index;
+              },
             ),
-            onPressed: () {
-              setState(
-                () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const HomePage(),
-                    ),
-                  );
-                },
-              );
-            },
-          ),
-          label: "",
-        ),
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              setState(
-                () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const SearchPage(),
-                    ),
-                  );
-                },
-              );
-            },
-            color: colorFont,
-          ),
-          label: "",
-        ),
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: const Icon(Icons.shopping_cart),
-            onPressed: () {
-              setState(
-                () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const ShoppingCartPage(),
-                    ),
-                  );
-                },
-              );
-            },
-            color: colorFont,
-          ),
-          label: "",
-        ),
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: const Icon(Icons.favorite),
-            onPressed: () {
-              setState(
-                () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const FavoritePage(),
-                    ),
-                  );
-                },
-              );
-            },
-            color: colorFont,
-          ),
-          label: "",
-        ),
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: const Icon(Icons.account_circle),
-            onPressed: () {
-              setState(
-                () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const ProfilePage(),
-                    ),
-                  );
-                },
-              );
-            },
-            color: colorFont,
-          ),
-          label: "",
-        ),
-      ],
-      onTap: (index) => setState(
-        () {
-          selectedIndex = index;
+            currentIndex: selectedIndex,
+          );
         },
       ),
-      currentIndex: selectedIndex,
     );
   }
 }

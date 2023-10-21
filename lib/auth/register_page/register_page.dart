@@ -50,14 +50,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(height: 10),
-              Text(
-                errorMessage,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 231, 32, 18),
-                ),
-              ),
-              const SizedBox(height: 10),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -75,6 +67,11 @@ class _RegisterPageState extends State<RegisterPage> {
                             errorMessage = 'Invalid registration : $error';
                           },
                         );
+                      }
+                      if (success == true) {
+                        // ignore: use_build_context_synchronously
+                        Navigator.of(context)
+                            .popUntil((route) => route.isFirst);
                       }
                     },
                     child: const Text(

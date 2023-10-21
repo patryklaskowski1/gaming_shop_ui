@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gaming_shop_ui/auth/root_page/cubit/root_page_cubit.dart';
+import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/home_page/page/home_page.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -23,9 +24,9 @@ class ProfilePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ElevatedButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -33,18 +34,36 @@ class ProfilePage extends StatelessWidget {
                               ),
                             );
                           },
-                          child: const Text('Back to Shop'),
+                          child: const Text(
+                            ' ↩ Back to Shop',
+                            style: TextStyle(
+                              color: Colors.transparent,
+                              fontSize: 14,
+                              shadows: [
+                                Shadow(offset: Offset(0, -5), color: colorFont)
+                              ],
+                              decoration: TextDecoration.underline,
+                              decorationColor: Colors.yellow,
+                            ),
+                          ),
                         ),
-                        ElevatedButton(
-                          onPressed: () {
-                            context.read<RootPageCubit>().signOut();
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => const HomePage(),
-                              ),
-                            );
-                          },
-                          child: const Text('Log out'),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              foregroundColor: colorFont,
+                              backgroundColor: Colors.yellow,
+                            ),
+                            onPressed: () {
+                              context.read<RootPageCubit>().signOut();
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => const HomePage(),
+                                ),
+                              );
+                            },
+                            child: const Text('Log out'),
+                          ),
                         ),
                       ],
                     ),

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/auth/register_page/register_page.dart';
 import 'package:gaming_shop_ui/const/const.dart';
+import 'package:gaming_shop_ui/home_page/page/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({
@@ -31,6 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                 'Sign in to account',
                 style: TextStyle(
                   color: colorFont,
+                  fontSize: 20,
                 ),
               ),
               const SizedBox(height: 20),
@@ -61,6 +63,10 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: colorFont,
+                      backgroundColor: Colors.yellow,
+                    ),
                     onPressed: () async {
                       try {
                         await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -79,8 +85,32 @@ class _LoginPageState extends State<LoginPage> {
                       'Sign in ',
                     ),
                   ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: colorFont,
+                      backgroundColor: Colors.yellow,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      '↩ Return to the store without logging in',
+                    ),
+                  ),
                   const SizedBox(height: 40),
-                  const Text("If you don't have an account ↓"),
+                  const Text(
+                    "If you don't have an account ↓",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: colorFont,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).push(
@@ -90,7 +120,16 @@ class _LoginPageState extends State<LoginPage> {
                       );
                     },
                     child: const Text(
-                      'Create an account',
+                      '➣ Create an account ',
+                      style: TextStyle(
+                        color: Colors.transparent,
+                        fontSize: 18,
+                        shadows: [
+                          Shadow(offset: Offset(0, -5), color: colorFont)
+                        ],
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.yellow,
+                      ),
                     ),
                   ),
                 ],

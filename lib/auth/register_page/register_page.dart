@@ -32,6 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 'Create an account',
                 style: TextStyle(
                   color: colorFont,
+                  fontSize: 20,
                 ),
               ),
               const SizedBox(height: 10),
@@ -54,6 +55,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: colorFont,
+                      backgroundColor: Colors.yellow,
+                    ),
                     onPressed: () async {
                       try {
                         await FirebaseAuth.instance
@@ -80,6 +85,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   const SizedBox(height: 10),
                   TextButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: colorFont,
+                    ),
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
@@ -89,6 +97,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                     child: const Text(
                       'Back to sign in',
+                      style: TextStyle(
+                        color: Colors.transparent,
+                        fontSize: 18,
+                        shadows: [
+                          Shadow(offset: Offset(0, -5), color: colorFont)
+                        ],
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.yellow,
+                      ),
                     ),
                   ),
                 ],
@@ -109,7 +126,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text("Password is correct"),
+                      content: Text("Password is matching ✅"),
                     ),
                   );
                 },

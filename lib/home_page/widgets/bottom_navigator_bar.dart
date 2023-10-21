@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gaming_shop_ui/auth/login_page/login_page.dart';
 import 'package:gaming_shop_ui/auth/root_page/cubit/root_page_cubit.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/favorite_page/favorite_page.dart';
@@ -116,11 +115,8 @@ class _BottomNavigatorBarDesignState extends State<BottomNavigatorBarDesign> {
                           ),
                         );
                         if (state.user?.email == null) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => LoginPage(),
-                            ),
-                          );
+                          Navigator.of(context)
+                              .popUntil((route) => route.isFirst);
                         }
                       },
                     );

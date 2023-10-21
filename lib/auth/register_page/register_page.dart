@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/auth/login_page/login_page.dart';
 import 'package:gaming_shop_ui/const/const.dart';
+import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({
@@ -10,7 +11,6 @@ class RegisterPage extends StatefulWidget {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final accountNameController = TextEditingController();
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -18,7 +18,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   var errorMessage = '';
-
+  bool success = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: colorFont,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               TextField(
                 controller: widget.emailController,
                 decoration: const InputDecoration(
@@ -49,7 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   hintText: 'Password',
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Text(
                 errorMessage,
                 style: const TextStyle(
@@ -57,7 +57,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: Color.fromARGB(255, 231, 32, 18),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -81,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       'Sign Up  ',
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).push(
@@ -95,6 +95,32 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ],
+              ),
+              FlutterPwValidator(
+                controller: widget.passwordController,
+                minLength: 8,
+                uppercaseCharCount: 1,
+                numericCharCount: 2,
+                specialCharCount: 1,
+                normalCharCount: 3,
+                width: 300,
+                height: 100,
+                onSuccess: () {
+                  setState(() {
+                    success = true;
+                  });
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Password is correct"),
+                    ),
+                  );
+                },
+                onFail: () {
+                  setState(() {
+                    success = false;
+                  });
+                },
               ),
             ],
           ),

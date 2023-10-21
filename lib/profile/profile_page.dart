@@ -74,16 +74,53 @@ class ProfilePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const CircleAvatar(
-                          backgroundImage: AssetImage('images/avatar.jpg'),
-                          maxRadius: 50,
+                        Stack(
+                          children: [
+                            const CircleAvatar(
+                              backgroundImage: AssetImage('images/avatar.jpg'),
+                              maxRadius: 50,
+                            ),
+                            Positioned(
+                              bottom: -10,
+                              left: 65,
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(100.0),
+                                onTap: () {},
+                                child: const Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: Icon(
+                                    Icons.add_circle,
+                                    color: Colors.yellow,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 30),
+                        const SizedBox(width: 40),
                         Column(
                           children: [
-                            const Text('Account E-mail :'),
+                            const Text(
+                              'Account E-mail :',
+                              style: TextStyle(
+                                color: Colors.transparent,
+                                fontSize: 15,
+                                shadows: [
+                                  Shadow(
+                                      offset: Offset(0, -5), color: colorFont)
+                                ],
+                                decoration: TextDecoration.underline,
+                                decorationColor: Colors.yellow,
+                              ),
+                            ),
                             const SizedBox(height: 10),
-                            Text('${state.user?.email}'),
+                            Text(
+                              '${state.user?.email}',
+                              style: const TextStyle(
+                                color: colorFont,
+                                fontSize: 18,
+                              ),
+                            ),
                           ],
                         ),
                       ],

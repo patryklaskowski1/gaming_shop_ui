@@ -163,16 +163,12 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
                     padding: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: colorFont,
+                        foregroundColor: colorFont,
+                        backgroundColor: Colors.yellow,
                         fixedSize: const Size(140, 40),
                       ),
                       onPressed: () {},
-                      child: const Text(
-                        'Pay',
-                        style: TextStyle(
-                          color: Colors.yellow,
-                        ),
-                      ),
+                      child: const Text('Pay'),
                     ),
                   ),
                 ],

@@ -24,7 +24,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.all(35),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -35,11 +35,27 @@ class _RegisterPageState extends State<RegisterPage> {
                   fontSize: 20,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               TextField(
                 controller: widget.emailController,
                 decoration: const InputDecoration(
                   hintText: 'Addres E-mail',
+                  icon: Icon(
+                    Icons.email_outlined,
+                    color: Colors.yellow,
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 3,
+                      color: colorFont,
+                    ),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 3,
+                      color: Colors.yellow,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
@@ -48,6 +64,22 @@ class _RegisterPageState extends State<RegisterPage> {
                 obscureText: true,
                 decoration: const InputDecoration(
                   hintText: 'Password',
+                  icon: Icon(
+                    Icons.vpn_key,
+                    color: Colors.yellow,
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 3,
+                      color: colorFont,
+                    ),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 3,
+                      color: Colors.yellow,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 10),

@@ -23,7 +23,7 @@ class BackDrawerMenu extends StatelessWidget {
         children: [
           const DrawerHeader(
             child: Image(
-              image: AssetImage('images/sale1.jpg'),
+              image: AssetImage('images/ad.png'),
               fit: BoxFit.fitWidth,
             ),
           ),

@@ -34,10 +34,10 @@ class LaptopViewModel extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(bottom: 5),
               child: Text(
-                ' Computer Ultra Maxi',
+                'Laptop Pro ',
                 style: TextStyle(
                   color: colorFont,
-                  fontSize: 12,
+                  fontSize: 14,
                 ),
               ),
             ),

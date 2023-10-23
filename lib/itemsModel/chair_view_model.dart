@@ -27,7 +27,7 @@ class ChairViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/chair.jpg'),
+                image: AssetImage('images/chair.png'),
                 fit: BoxFit.fill,
               ),
             ),

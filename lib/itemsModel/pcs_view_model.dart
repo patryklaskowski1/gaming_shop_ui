@@ -27,15 +27,18 @@ class PcsViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/comp.jpg'),
+                image: AssetImage('images/pc.png'),
                 fit: BoxFit.fill,
               ),
             ),
             const Padding(
               padding: EdgeInsets.only(bottom: 5),
               child: Text(
-                ' Computer Ultra Maxi',
-                style: TextStyle(color: colorFont, fontSize: 12),
+                ' Computer Ultra',
+                style: TextStyle(
+                  color: colorFont,
+                  fontSize: 14,
+                ),
               ),
             ),
             const Padding(

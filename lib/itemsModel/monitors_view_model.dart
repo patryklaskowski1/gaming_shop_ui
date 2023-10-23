@@ -27,7 +27,7 @@ class MonitorsViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/monitor.jpg'),
+                image: AssetImage('images/monitor.png'),
                 fit: BoxFit.fill,
               ),
             ),

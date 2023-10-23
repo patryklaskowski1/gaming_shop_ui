@@ -27,7 +27,7 @@ class MicrophonesViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/mic.jpg'),
+                image: AssetImage('images/microphone.png'),
                 fit: BoxFit.fill,
               ),
             ),

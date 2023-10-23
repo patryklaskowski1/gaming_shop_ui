@@ -27,7 +27,7 @@ class MouseViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/mouse.jpg'),
+                image: AssetImage('images/mouse.png'),
                 fit: BoxFit.fill,
               ),
             ),

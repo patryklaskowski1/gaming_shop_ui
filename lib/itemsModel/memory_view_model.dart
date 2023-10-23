@@ -27,7 +27,7 @@ class MemoryViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/ram.jpg'),
+                image: AssetImage('images/memory.png'),
                 fit: BoxFit.fill,
               ),
             ),

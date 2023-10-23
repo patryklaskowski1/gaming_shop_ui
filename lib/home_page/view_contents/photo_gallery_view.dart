@@ -9,10 +9,10 @@ class PhotoGalleryPage extends StatelessWidget {
   });
 
   final photoList = [
-    'images/sale1.jpg',
-    'images/item.jpg',
-    'images/item1.jpg',
-    'images/chairs.png',
+    'images/ad.png',
+    'images/ad1.png',
+    'images/ad2.png',
+    'images/ad3.png',
   ];
 
   @override
@@ -27,7 +27,7 @@ class PhotoGalleryPage extends StatelessWidget {
         ),
       ),
       child: SizedBox(
-        width: 360,
+        width: 355,
         height: 200,
         child: Scaffold(
           body: PhotoViewGallery.builder(

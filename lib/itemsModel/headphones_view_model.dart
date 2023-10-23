@@ -27,7 +27,7 @@ class HeadphonesViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/headphones1.jpg'),
+                image: AssetImage('images/headphone.png'),
                 fit: BoxFit.fill,
               ),
             ),

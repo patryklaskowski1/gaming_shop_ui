@@ -27,7 +27,7 @@ class KeyboardsViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/keyboard1.jpg'),
+                image: AssetImage('images/keyboard.png'),
                 fit: BoxFit.fill,
               ),
             ),

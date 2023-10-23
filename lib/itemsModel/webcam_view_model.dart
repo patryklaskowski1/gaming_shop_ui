@@ -27,7 +27,7 @@ class WebcamViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/cam.jpg'),
+                image: AssetImage('images/webcam.png'),
                 fit: BoxFit.fill,
               ),
             ),

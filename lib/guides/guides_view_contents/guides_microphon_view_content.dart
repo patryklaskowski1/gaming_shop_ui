@@ -18,7 +18,7 @@ class GuidesMicrophonViewContent extends StatelessWidget {
               height: 120,
               width: 140,
               child: Image(
-                image: AssetImage('images/mic.jpg'),
+                image: AssetImage('images/microphone.png'),
                 fit: BoxFit.fill,
               ),
             ),

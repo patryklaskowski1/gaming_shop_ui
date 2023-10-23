@@ -27,7 +27,7 @@ class OthersViewModel extends StatelessWidget {
               height: 140,
               width: 120,
               child: Image(
-                image: AssetImage('images/stand.jpg'),
+                image: AssetImage('images/stand.png'),
                 fit: BoxFit.fill,
               ),
             ),

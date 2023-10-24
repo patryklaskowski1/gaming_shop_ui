@@ -4,7 +4,7 @@ import 'package:gaming_shop_ui/auth/root_page/cubit/root_page_cubit.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/favorite_page/favorite_page.dart';
 import 'package:gaming_shop_ui/home_page/page/home_page.dart';
-import 'package:gaming_shop_ui/profile/profile_page.dart';
+import 'package:gaming_shop_ui/profile/page/profile_page.dart';
 import 'package:gaming_shop_ui/serach_page/serach_page.dart';
 import 'package:gaming_shop_ui/shopping_cart_page/shopping_cart_page.dart';
 

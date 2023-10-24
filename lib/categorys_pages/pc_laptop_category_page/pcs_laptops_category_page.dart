@@ -32,12 +32,12 @@ class _PcsLaptopsCategoryPageState extends State<PcsLaptopsCategoryPage> {
               padding: const EdgeInsets.all(5),
               child: GridView.count(
                 childAspectRatio: MediaQuery.of(context).size.width /
-                    (MediaQuery.of(context).size.height),
+                    (MediaQuery.of(context).size.height / 1.08),
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 crossAxisCount: 3,
-                crossAxisSpacing: 5,
-                mainAxisSpacing: 10,
+                crossAxisSpacing: 2,
+                mainAxisSpacing: 5,
                 children: const [
                   LaptopViewModel(),
                   PcsViewModel(),

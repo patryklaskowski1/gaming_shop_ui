@@ -31,12 +31,12 @@ class _MonitorsCategoryPageState extends State<MonitorsCategoryPage> {
               padding: const EdgeInsets.all(5),
               child: GridView.count(
                 childAspectRatio: MediaQuery.of(context).size.width /
-                    (MediaQuery.of(context).size.height),
+                    (MediaQuery.of(context).size.height / 1.1),
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 crossAxisCount: 3,
                 crossAxisSpacing: 2,
-                mainAxisSpacing: 10,
+                mainAxisSpacing: 5,
                 children: const [
                   MonitorsViewModel(),
                   MonitorsViewModel(),

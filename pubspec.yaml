@@ -43,22 +43,24 @@ dependencies:
   flutter_pw_validator: ^1.6.0
   image_picker: ^1.0.4
   path_provider: ^2.1.1
+  flutter_native_splash: ^2.3.4
+flutter_native_splash:
+  color: "#8306B2"
+  image: images/splash1.png
+  android_12: 
+    image: images/splash1.png
+  android: true
+  ios: true
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.0  
+  
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
+  
 flutter:
 
   # The following line ensures that the Material Icons font is

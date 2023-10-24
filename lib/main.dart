@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:gaming_shop_ui/auth/root_page/root_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -8,6 +9,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Future.delayed(
+    const Duration(
+      seconds: 2,
+    ),
+  );
+  FlutterNativeSplash.remove();
   runApp(const MyApp());
 }
 

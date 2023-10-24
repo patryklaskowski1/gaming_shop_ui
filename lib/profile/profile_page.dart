@@ -44,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           children: [
             const Text(
-              'Choose profile photo',
+              'Choose upload photo',
               style: TextStyle(
                 fontSize: 18,
                 color: colorFont,
@@ -159,76 +159,83 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Stack(
-                            children: [
-                              image != null
-                                  ? CircleAvatar(
-                                      backgroundImage: FileImage(image!),
-                                      maxRadius: 50,
-                                    )
-                                  : const CircleAvatar(
-                                      backgroundImage:
-                                          AssetImage('images/avatar.jpg'),
-                                      maxRadius: 50,
-                                    ),
-                              Positioned(
-                                bottom: -10,
-                                left: 65,
-                                child: InkWell(
-                                  borderRadius: BorderRadius.circular(100.0),
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                      context: context,
-                                      builder: ((builder) =>
-                                          chooseUploadPhoto()),
-                                    );
-                                  },
-                                  child: const Padding(
-                                    padding: EdgeInsets.all(10.0),
-                                    child: Icon(
-                                      Icons.add_circle,
-                                      color: Colors.yellow,
+                      padding: const EdgeInsets.only(
+                        top: 20,
+                        right: 20,
+                        left: 20,
+                      ),
+                      child: Expanded(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Stack(
+                              children: [
+                                image != null
+                                    ? CircleAvatar(
+                                        backgroundImage: FileImage(image!),
+                                        maxRadius: 40,
+                                      )
+                                    : const CircleAvatar(
+                                        backgroundImage:
+                                            AssetImage('images/avatar.jpg'),
+                                        maxRadius: 40,
+                                      ),
+                                Positioned(
+                                  bottom: -10,
+                                  left: 48,
+                                  child: InkWell(
+                                    borderRadius: BorderRadius.circular(100.0),
+                                    onTap: () {
+                                      showModalBottomSheet(
+                                        context: context,
+                                        builder: ((builder) =>
+                                            chooseUploadPhoto()),
+                                      );
+                                    },
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(10.0),
+                                      child: Icon(
+                                        Icons.add_circle,
+                                        color: Colors.yellow,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(width: 40),
-                          Column(
-                            children: [
-                              const Text(
-                                'Account E-mail :',
-                                style: TextStyle(
-                                  color: Colors.transparent,
-                                  fontSize: 15,
-                                  shadows: [
-                                    Shadow(
-                                        offset: Offset(0, -5), color: colorFont)
-                                  ],
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: Colors.yellow,
+                              ],
+                            ),
+                            const SizedBox(width: 40),
+                            Column(
+                              children: [
+                                const Text(
+                                  'Account E-mail :',
+                                  style: TextStyle(
+                                    color: Colors.transparent,
+                                    fontSize: 15,
+                                    shadows: [
+                                      Shadow(
+                                          offset: Offset(0, -5),
+                                          color: colorFont)
+                                    ],
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: Colors.yellow,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                '${state.user?.email}',
-                                style: const TextStyle(
-                                  color: colorFont,
-                                  fontSize: 18,
+                                const SizedBox(height: 10),
+                                Text(
+                                  '${state.user?.email}',
+                                  style: const TextStyle(
+                                    color: colorFont,
+                                    fontSize: 16,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 20),
                     Padding(
                       padding: const EdgeInsets.all(20),
                       child: Column(

@@ -68,7 +68,7 @@ class _UserOpinionPageState extends State<UserOpinionPage> {
                               padding: EdgeInsets.only(left: 10),
                               child: Icon(
                                 Icons.thumb_up_alt_outlined,
-                                color: colorFont,
+                                color: Colors.yellow,
                               ),
                             ),
                             SizedBox(
@@ -81,7 +81,7 @@ class _UserOpinionPageState extends State<UserOpinionPage> {
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.yellow,
+                                      color: colorFont,
                                     ),
                                   ),
                                   SizedBox(height: 5),
@@ -89,7 +89,7 @@ class _UserOpinionPageState extends State<UserOpinionPage> {
                                     'After purchasing a product, leave your opinions to help others when choosing',
                                     style: TextStyle(
                                       fontSize: 14,
-                                      color: Colors.yellow,
+                                      color: colorFont,
                                     ),
                                   ),
                                 ],
@@ -146,7 +146,7 @@ class _UserOpinionPageState extends State<UserOpinionPage> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.yellow,
+                                  color: colorFont,
                                 ),
                               ),
                             ),

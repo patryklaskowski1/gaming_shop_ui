@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gaming_shop_ui/auth/root_page/cubit/root_page_cubit.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/home_page/page/home_page.dart';
-import 'package:gaming_shop_ui/profile/user_opinion/opinion_page_content.dart';
+import 'package:gaming_shop_ui/profile/user_opinion_page/opinion_page_content.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 

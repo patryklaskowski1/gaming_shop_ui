@@ -27,9 +27,17 @@ class _PcsLaptopsCategoryPageState extends State<PcsLaptopsCategoryPage> {
       body: Column(
         children: [
           const GuidesView(),
+          const Divider(
+            color: Colors.yellow,
+            height: 15,
+          ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.only(
+                bottom: 5,
+                right: 5,
+                left: 5,
+              ),
               child: GridView.count(
                 childAspectRatio: MediaQuery.of(context).size.width /
                     (MediaQuery.of(context).size.height / 1.08),

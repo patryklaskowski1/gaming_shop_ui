@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gaming_shop_ui/auth/root_page/cubit/root_page_cubit.dart';
 import 'package:gaming_shop_ui/const/const.dart';
 import 'package:gaming_shop_ui/home_page/page/home_page.dart';
+import 'package:gaming_shop_ui/profile/personal_details_page/personal_details_page.dart';
 import 'package:gaming_shop_ui/profile/user_opinion_page/opinion_page_content.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
@@ -245,7 +246,13 @@ class _ProfilePageState extends State<ProfilePage> {
                             color: Colors.yellow,
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => PersonalDetailsPage(),
+                                ),
+                              );
+                            },
                             child: const Text(
                               'My personal details',
                               style: TextStyle(

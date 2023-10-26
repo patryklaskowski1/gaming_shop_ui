@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gaming_shop_ui/const/const.dart';
+import 'package:gaming_shop_ui/home_page/page/home_page.dart';
 import 'package:gaming_shop_ui/shopping_cart_page/shopping_cart_page.dart';
 
 class AppBarView extends StatefulWidget {
@@ -18,11 +19,20 @@ class _AppBarViewState extends State<AppBarView> {
       iconTheme: const IconThemeData(
         color: colorFont,
       ),
-      title: const Text(
-        'GaimingShop UI',
-        style: TextStyle(
-          color: colorFont,
-          fontWeight: FontWeight.bold,
+      title: GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const HomePage(),
+            ),
+          );
+        },
+        child: const Text(
+          'GaimingShop UI',
+          style: TextStyle(
+            color: colorFont,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       centerTitle: true,

@@ -169,7 +169,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Expanded(
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Stack(
                               children: [

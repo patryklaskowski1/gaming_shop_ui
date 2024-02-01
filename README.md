@@ -1,6 +1,6 @@
 # gaming_shop_ui
 
-<h1 align="center" id="title">gaming_shop_ui</h1>
+<h1 align="center" id="title">Gaming Sop UI</h1>
 
 <p id="description"> Mobile store application for gamers. You will find everything a player needs </p>
 
@@ -36,3 +36,4 @@ Technologies used in the project:
 <h2> Author:</h2>
 
 [@patryklaskowski1](https://github.com/patryklaskowski1)   
+[@LinkedinProfile](https://www.linkedin.com/in/patryk-l-363329189/) 
